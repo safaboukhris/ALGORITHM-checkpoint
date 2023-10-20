@@ -1,0 +1,25 @@
+ALGORITHM Checkpoint  
+VAR
+    numb_char:=INTEGER :=0;
+    numb_voyelle:=INTEGER :=0;
+    numb_word:=INTEGER :=0;
+    sentance:=STRING;
+BEGIN
+    write("sentance")
+    read(sentance)
+
+    REPEAT
+        IF (sentance[numb_char] = ["a","e","i","o","u","y"]) THEN
+            numb_voyelle:=numb_voyelle+1;
+        END_IF
+        //space indicate there is another word
+        IF (sentance[numb_char]:=" ") THEN
+            numb_word:=numb_word+1;
+        END_IF
+        numb_char:=numb_char+1;
+    UNTIL (sentance[numb_char]:=".")
+    //THE POINT IS AN CHARACTER
+    write(numb_char+1)
+    write(numb_voyelle)
+    write(numb_word)
+END
